@@ -45,7 +45,6 @@ func ShortenURL(c *fiber.Ctx) error {
 		)
 	} else {
 		// Found the user IP in DB
-		val, _ := r2.Get(database.Ctx, c.IP()).Result()
 		// Get the API QUOTA for the IP -> how many api calls left
 		valInt, _ := strconv.Atoi(val)
 		if valInt <= 0 {
